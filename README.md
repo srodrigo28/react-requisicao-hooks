@@ -6,3 +6,5 @@
     * Asyn / Wait
     * Axios
     * Reduce inicial
+## Outros links
+* https://www.youtube.com/watch?v=jcc9T-5inrk&t=259s
