@@ -1,0 +1,20 @@
+*{ margin: 0; padding: 0; box-sizing: border-box;}
+.item-container{
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no-wrap;
+    justify-content: space-between;
+}
+.item{
+    width: 16em; margin: auto;
+    border: 1px solid black;
+}
+.item-imagem{
+    width: 15em;
+}
+.item-texto{
+    font-size: 12px;
+    width: 15em;
+    color: black; font-weight: bold;
+}

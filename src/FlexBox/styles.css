@@ -1,0 +1,17 @@
+.container1{
+    background-color: #dcdcdc;
+    color: black; font-weight: bolder;
+    height: 100vh;
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: start;
+    /* align-items: center; */
+    
+    font-size: 1em;
+}
+.item{   border: 1px solid; height: 20vh; width: 8em;}
+.i1{ background-color: tomato; }
+.i2{ background-color: blue; }
+.i3{ background-color: yellow; }
