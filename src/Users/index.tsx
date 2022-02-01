@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
-import { Movie } from "./../types/Movie";
+import { User } from "./../types/User";
 
-export const Movies = () =>{
-    const [movies, setMovies] = useState<Movie[]>([]);
+export const Users = () =>{
+    const [users, setUsers] = useState<User[]>([]);
     const [loading, setLoding] = useState(false);
 
     useEffect(() => {
@@ -10,6 +10,7 @@ export const Movies = () =>{
     }, [])
 
   // https://api.b7web.com.br/cinema/
+  // http://localhost:3001/users/
   // http://localhost/www/api_php/users/users.php/records/
 /*** 
   const loadMovies = () =>{
@@ -27,10 +28,10 @@ export const Movies = () =>{
   */
  const loadMovies = async () =>{
    setLoding(true);
-   let res = await fetch('https://api.b7web.com.br/cinema/');
+   let res = await fetch('http://localhost:3001/users/');
    let json = await res.json();
    setLoding(false);
-   setMovies(json);
+   setUsers(json);
    
  }
   return (
@@ -40,16 +41,15 @@ export const Movies = () =>{
         <div>Carregando...</div>
       }
       
-      <button className="block bg-green-900 text-white p-2 rounded" onClick={loadMovies}>Carregar Filmes</button>
       {!loading &&
-      <div>Total de Filmes: {movies.length}</div>
+      <div>Total de Registros: {users.length}</div>
       }
+      
       <div>
         <div className="grid grid-cols-6 gap-3"></div>
-            {movies.map((item, index) =>(
+            {users.map((item, index) =>(
               <div key={index}>
-                <img src={item.avatar} className="w-32 block" alt="aaa"/>
-                <p>{item.titulo}</p> 
+                <p>{item.name} - <span>{item.email}</span></p> 
                </div>
             ))}
       </div>
